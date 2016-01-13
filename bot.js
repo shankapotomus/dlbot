@@ -5,7 +5,8 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegexSalt = /^\/salt/; botRegexStHD = /^\/StatsHD/;  botRegexSC = /^\/SDL/; botRegexStBrad = /^\/StatsBrad/
+      botRegexSalt = /^\/salt/;
+      botRegexS = /^\/schedule/i;  botRegexSC = /^\/SDL/i;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -18,100 +19,14 @@ function respond() {
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
+    postMessage("http://daddyleagues.com/1738rmlar/team/"+request.text.substring(5,8)+"/schedule");
+    this.res.end();
+  }
+  else if(request.text && botRegexS.test(request.text)) {
+    this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
     postMessage("https://docs.google.com/spreadsheets/d/1rVVVl3k_AZ4IsooHbwhnU6QpxCo5nWd2picVzc5HcqI/edit#gid=1864491928");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-    else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
-    this.res.end();
-  }
-  else if(request.text && botRegexStHD.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("https://docs.google.com/spreadsheets/d/1R2vtzz67TSWiYfM_djMs4Y8PDweYkCpcEUcMwMs_sJk/edit#gid=1519997243");
     this.res.end();
   }
   else {
