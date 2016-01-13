@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;botRegexSalt = /^\/salt/;
+      botRegex = /^\/cool guy/;botRegexSalt = /^\/salt/;botRegexTY = /^\/TY/;
       
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -15,6 +15,11 @@ function respond() {
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.imgur.com/B5BSVqH.png");
+    this.res.end();
+  } 
+    else if(request.text && botRegexTY.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://content.forums.colts.com/profile/photo-1110.gif);
     this.res.end();
   } 
   else {
