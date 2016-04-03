@@ -5,8 +5,8 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i; botRegexS = /^\/schedule/; botRegexRules = /^\/rules/
+      botRegexsma=/^\/sma/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botchoke = /^\/choke/; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -18,22 +18,22 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/orb/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/rcfm2/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
-  else if(request.text && botRegexSalt.test(request.text)) {
+  else if(request.text && botRegexS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.imgur.com/B5BSVqH.png");
+    postMessage("http://daddyleagues.com/rcfm2/schedules");
     this.res.end();
   } 
-  else if(request.text && botRegexAd.test(request.text)) {
+  else if(request.text && botRegexsma.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
+    postMessage("http://i.gifntext.com/61945-for-all-you-haters-out-there-suck-my-ass.gif");
     this.res.end();
   }
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/orb/rules");
+    postMessage("http://daddyleagues.com/rcfm2/rules");
     this.res.end();
   } 
   else if(request.text && botRegexGTA.test(request.text)) {
@@ -43,14 +43,14 @@ function respond() {
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/orb/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/rcfm2/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/orb/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/rcfm2/players?name="+rep+"&position=all&team=all");
     this.res.end();
   }  
 
@@ -61,12 +61,12 @@ function respond() {
   } 
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.reddit.com/r/maddenall32");
+    postMessage("http://www.reddit.com/r/rcfm2");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("¯\\_(ツ)_/¯");
+    postMessage("https://media.giphy.com/media/ISRyUCU5i8J4k/giphy.gif");
     this.res.end();
   } 
   else if(request.text && botRegexWk.test(request.text)) {
@@ -74,9 +74,9 @@ function respond() {
     postMessage("https://docs.google.com/spreadsheets/d/1kJqQWCq3RKiTrd4f71FFNKr-Y0ppJzjk0fSF0rP6Bto/edit?usp=sharing");
     this.res.end();
   } 
-  else if(request.text && botODB.test(request.text)) {
+  else if(request.text && botchoke.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("OBJ*");
+    postMessage("http://vignette3.wikia.nocookie.net/uncyclopedia/images/c/ce/Reggie-miller-choke.jpg/revision/latest?cb=20110125062146");
     this.res.end();
   } 
   else if(request.text && botDuck.test(request.text)) {
