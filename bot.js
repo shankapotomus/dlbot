@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i; botRegexS = /^\/schedule/; botRegexRules = /^\/rules/
-      botRegexsma=/^\/sma/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botchoke = /^\/choke/; botDuck = /^\/duck/;
+      botRegexsma=/^\/sma/;botRegexinfo = /^\/info/; botRegexSC = /^\/SDL/i; botchoke = /^\/choke/; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -36,9 +36,9 @@ function respond() {
     postMessage("http://daddyleagues.com/rcfm2/rules");
     this.res.end();
   } 
-  else if(request.text && botRegexGTA.test(request.text)) {
+  else if(request.text && botRegexinfo.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
+    postMessage("Welcome to the Daddy Leagues bot. This bot will help you access DL through the groupme itself. /sdl followed by the team's three letter initials will pull up the schedule, /ddl followd by the teams three letter initials will pull up their depth chart and /pdl followed by a players name will pull up the player page. Finally /schedule will pull up the league schedule for the week.");
     this.res.end();
   } 
   else if(request.text && botRegexSC.test(request.text)) {
