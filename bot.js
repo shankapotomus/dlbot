@@ -38,7 +38,7 @@ function respond() {
   } 
   else if(request.text && botRegexinfo.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Welcome to the Daddy Leagues bot. This bot will help you access DL through the groupme itself. /sdl followed by the team's three letter initials will pull up the schedule, /ddl followd by the teams three letter initials will pull up their depth chart and /pdl followed by a players name will pull up the player page. Finally /schedule will pull up the league schedule for the week.");
+    postMessage("Welcome to the Daddy Leagues bot. This bot will help you access DL through the groupme itself. /sdl followed by the team's three letter initials will pull up the schedule, /ddl followed by the teams three letter initials will pull up their depth chart and /pdl followed by a players name will pull up the player search page. Finally /schedule will pull up the league schedule for the week.");
     this.res.end();
   } 
   else if(request.text && botRegexSC.test(request.text)) {
